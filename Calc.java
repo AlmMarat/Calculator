@@ -6,10 +6,10 @@ class Calc {
     static int result;
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Введите выражение с числами от 1 до 10 или от I до X (Пример 2 + 2 или X - IV):");
+        System.out.println("Р’РІРµРґРёС‚Рµ РІС‹СЂР°Р¶РµРЅРёРµ СЃ С‡РёСЃР»Р°РјРё РѕС‚ 1 РґРѕ 10 РёР»Рё РѕС‚ I РґРѕ X (РџСЂРёРјРµСЂ 2 + 2 РёР»Рё X - IV):");
         String[] input = sc.nextLine().split(" ");
         if(input.length > 3) {
-            throw new Exception("Не более 2 операндов и 1 знака операции");
+            throw new Exception("РќРµ Р±РѕР»РµРµ 2 РѕРїРµСЂР°РЅРґРѕРІ Рё 1 Р·РЅР°РєР° РѕРїРµСЂР°С†РёРё");
         }
 
         if(input[0].equals("I") || input[0].equals("II") || input[0].equals("III") || input[0].equals("IV") || input[0].equals("V") || input[0].equals("VI") || input[0].equals("VII") || input[0].equals("VIII") ||
@@ -24,10 +24,10 @@ class Calc {
                     String resultRomanNum = convertArabToRoman(result);
                     System.out.println(resultRomanNum);
                 } else {
-                    throw new Exception("Результат не может быть меньше 1");
+                    throw new Exception("Р РµР·СѓР»СЊС‚Р°С‚ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅСЊС€Рµ 1");
                 }
             } else {
-                throw new Exception("Римские цифры не могут быть нулём и отрицательными");
+                throw new Exception("Р РёРјСЃРєРёРµ С†РёС„СЂС‹ РЅРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РЅСѓР»С‘Рј Рё РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹РјРё");
             }
         } else {
             num1 = Integer.parseInt(input[0]);
@@ -36,7 +36,7 @@ class Calc {
                 result = calculated(num1, num2, input[1]);
                 System.out.println(result);
             } else {
-                throw new Exception("Вводить нужно только от 1 до 10 включительно!");
+                throw new Exception("Р’РІРѕРґРёС‚СЊ РЅСѓР¶РЅРѕ С‚РѕР»СЊРєРѕ РѕС‚ 1 РґРѕ 10 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ!");
             }
         }
     }
@@ -67,7 +67,7 @@ class Calc {
                     return 10;
                 }
             } else {
-            throw new Exception("Не верный ввод числа");
+            throw new Exception("РќРµ РІРµСЂРЅС‹Р№ РІРІРѕРґ С‡РёСЃР»Р°");
         }
        return 0;
     }
@@ -101,11 +101,11 @@ class Calc {
                 try {
                     result = number1 / number2;
                 } catch (ArithmeticException e) {
-                    throw new ArithmeticException("Нельзя делить на 0");
+                    throw new ArithmeticException("РќРµР»СЊР·СЏ РґРµР»РёС‚СЊ РЅР° 0");
                 }
                 break;
             default:
-                throw new IllegalArgumentException("Не верный знак операции: " + operation);
+                throw new IllegalArgumentException("РќРµ РІРµСЂРЅС‹Р№ Р·РЅР°Рє РѕРїРµСЂР°С†РёРё: " + operation);
         }
         return result;
     }
